@@ -1,7 +1,7 @@
-print("Aca empieza mi programa -----------------------------------------------------------------")
+print("Aca empieza mi programa ------------")
 #asi se crea una variable
 miVar = 10
-#asi se guarda en una var la pocion de memoria de una variable
+#asi se guarda en una var, la posicion de memoria de una var
 pos = id(miVar)
 #asi python imprime en consola una variable
 print(miVar)
@@ -13,4 +13,4 @@ print(miVar2)
 print("Cualquier texto")
 #asi se imprime un texto concatenado
 print("miVar2 es igtual a  : "+miVar2)
-print("Aca termina mi programa-----------------------------------------------------------------")
+print("Aca termina mi programa-----------")
