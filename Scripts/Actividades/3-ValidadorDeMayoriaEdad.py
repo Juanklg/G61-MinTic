@@ -1,6 +1,9 @@
 nombre = input("Ingrese su nombre : ")
 edad = input("Ingrese su edad : ")
 
+#imprime la posicion de memoria donde esta ubicada la variable nombre
+print(id(nombre))
+
 #el try nos ayuda a validar que se puede ejecutar una sentencia
 #en caso q se cumpla el programa sigue y si no ejecuta lo que hay despues del except
 #intentar ejecutar una linea de codigo  y verificar que no arroje un error
@@ -26,6 +29,7 @@ if type(edad)==int:
 else:
     print(f"{edad} no esta en formato numerico")
     exit()
+
 #asi se hace comentarios de multiples lineas
 """
 #Asi de hace un comentario de multiples lineas
