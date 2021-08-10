@@ -9,18 +9,20 @@ def crearFigura(lados:int,long:int):
         lt(360/lados)
     end_fill()
 
-# def crearTrazo(lim):
-#     fd(lim)
-#     bk(lim*2)
+def crearTrazo(lim):
+    fd(lim)
+    bk(lim*2)
 
-# def crearCoor(lim):
-#     crearTrazo(lim)
-#     home()
-#     lt(90)
-#     crearTrazo(lim)
-#     home()
+def crearCoor(lim):
+    crearTrazo(lim)
+    home()
+    lt(90)
+    crearTrazo(lim)
+    home()
 
-# crearCoor(280)
+crearFigura(4,100)
+
+done()
 
 def avanzar(a:int):
     """
@@ -65,6 +67,4 @@ def robotSquare():
 # crearFigura(4,100)
 # up()
 
-robotSquare()
-
-done()
+# robotSquare()
