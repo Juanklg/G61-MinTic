@@ -29,6 +29,4 @@ t.left(45)
 t.forward(100)
 t.end_fill()
 
-
-
 turtle.done()
