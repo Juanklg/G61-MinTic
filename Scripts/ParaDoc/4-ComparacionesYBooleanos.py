@@ -26,4 +26,4 @@ resultado = x < y
 print(f'Resultado < : {resultado}')
 
 resultado = x <= y
-print(f'Resultado: <= {resultado}')
+print(f'Resultado <= :{resultado}')

@@ -1,8 +1,8 @@
 #metodo simplificado con una fncion
 def validadorCondicion(any):
     print("Se ingreso a la funcion",any)
-    condicion = "verdadera" if any else "falsa" 
-    return "La condicion es "+condicion
+    condicion = True if any else False 
+    return "La condicion es "+str(condicion)
 
 print(validadorCondicion(""))
 print(validadorCondicion("A"))
