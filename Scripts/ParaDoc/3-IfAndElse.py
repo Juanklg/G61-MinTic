@@ -30,3 +30,23 @@ elif miBool == True or varInputBool == True:
     print(f"Alguna de las 2 es verdadera")
 else:
     print(f"Ninguna de las dos variables es verdadera")
+
+def cualEsMayor(x,y):
+    if x < y:
+        print("x es menor q y")
+    elif x > y:
+        print("x es mayor q y")
+    else:
+        print("x es igual a y")
+
+#para no utilizar anidados
+def operacionLogica():
+    if 0<x and x<10:
+        print("x es un numero positivo de un solo digito")
+
+
+if x == y:
+    print("x es igual a y")    
+else:
+    print("Entro al else")
+    cualEsMayor()
