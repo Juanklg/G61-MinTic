@@ -26,6 +26,13 @@ def printListOTupleConIndice(lt):
         print("Valor en pos",x," = ",lt[x])
     else: print('----------------------------')
 
+def detailArch(el):
+    print('---------------------------------')
+    print(el)
+    print("len = ",len(el))
+    for i,e in zip(range(len(el)),el):
+        print(f"Pos : {i} - Elemento : {e}")
+
 def isLogin(user)->bool:
     login = None
     if user=="Login":
@@ -41,8 +48,6 @@ isLogin('Login')
 #----------------------------------------------------------------------------
 print('Corriendo la app')
 
-# list
-#Creamos una lista con los nombres de los estudiantes
 Lestudiantes = [
     'Andres',
     'Brayan',
@@ -56,111 +61,101 @@ Lestudiantes = [
     'Juan',
 ]
 
-#creamos una tupla con las caracteristicas de los estudiantes
-# tuple
-TPropsEst = (
-    'nombre',
-    'user',
-    'edad',
-    'grupo',
-    'apellido',
-    'nota',
-)
-# TPropsEst = list(TPropsEst)
+texto = "Hola Grupo 61 desde python"
+print("Lgt",len(texto))
 
-# imprimir lista indexada
-printListOTupleConIndice(Lestudiantes)
-printListOTupleConIndice(TPropsEst)
+# Se describe con corchetes
+s = set(range(1,7))
+detailArch(s)
+#acepta varios tipos de variables
+# s = {True,"Grupo 61",10.5,(1,4,"Hola")}
+#no acepta listas ni diccionarios
 
-# tanto las listas como las tuplas tiene indexacion
-props = TPropsEst[2:4]
-print(props)
-props = Lestudiantes[2:4]
-print(props)
-props = TPropsEst[-1]
-print(props)
-props = Lestudiantes[-1]
-print(props)
+cText = set(texto)
+detailArch(cText)
+cEst = set(Lestudiantes)
+detailArch(cEst)
 
-#imprimir porpiedades de la clase lista
-# print(dir(Lestudiantes))
-# 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort'
-detailVar(Lestudiantes)
+print('Maria' in cEst)
 
-# 'append', Agrega un neuvo elemento al final de la lista
-Lestudiantes.append('mariana')
-# 'insert', agrega un elemento a la lista en una pos especifica
-Lestudiantes.insert(5,'maira')
-printListOTupleConIndice(Lestudiantes)
+s2 = {9,2,6,8,0}
 
-# 'pop', remueve un valor de la lista segun su pos
-Lestudiantes.pop()
-# 'remove', remueve un valor de la lista segun su valor
-Lestudiantes.remove('maira')
-printListOTupleConIndice(Lestudiantes)
+#s,cEst,cText
+#dir
+# print(dir(cEst))
 
-# 'count', cuenta cuenates veces encuentra un valor en la lista
-print("El count de Juan me retorna",Lestudiantes.count('Juan'))
-# 'extend', extiende una lista con una segunda lista o una tupla
-Lestudiantes.extend(TPropsEst)
-# 'index',  captura la pos (index) de primera aparicion de un valor de la lista
-primer = Lestudiantes.index('Juan')
-print("El primer Juan esta en", primer)
-print("El Segundo Juan esta en la pos",Lestudiantes.index('Juan',primer+1))
+#Hacemos una copia
+s3 = s2.copy()
+print('copy')
+detailArch(s2)
+detailArch(s3)
+#Comparacion con iguales
+#compara uno a uno los elementos del conjunto
+print("son iguales",(s3==s2))
 
-# 'copy', crea una copia de la lista
-copyList = Lestudiantes.copy()
-print(copyList)
-# 'reverse', organiza la lista en sentido contrario
-Lestudiantes.reverse()
-# printListOTupleConIndice(Lestudiantes)
-# 'sort' organiza la lista de mayor a menor
-Lestudiantes.sort(reverse=True)
-# printListOTupleConIndice(Lestudiantes)
-Lestudiantes.sort()
-printListOTupleConIndice(Lestudiantes)
+# # add elemento
+print('add')
+s3.add('Formador')
+detailArch(s2)
+detailArch(s3)
+# # difference
+# #retorna la diferencia q tiene el elemento inicial con el q entra como argumento
+print('difference s3(s2)',s3.difference(s2))
+print("s3-s2",s3-s2)
+#en este caso todos los elementos del s5 se encuentarn en el s3
+print('difference s2(s3)',s2.difference(s3))
+print("s2-s3",s2-s3)
 
-#Modificar por indexacion
-Lestudiantes[10]='Nuevo Valor'
-printListOTupleConIndice(Lestudiantes)
+# #difference_update ->
+print('difference_update',s3.difference_update(s2))
+print("Nuevo s3",s3)
+# #discard elimina si existe o si no continua normal
+print('discard',s3.discard('Formador'))
+print("Nuevo s3",s3)
+# #remove elmina pero retorna error si el elemnto no existe
+# print('remove',s3.remove('Formado'))
+# # intersection retorna los elementos q se encuentra en ambos conjntos
+detailArch(s)
+detailArch(s2)
+print('intersection',s3.intersection(s2))
+print('intersection',(s2 & s3))
+print('intersection',s2.intersection(s))
+print('intersection',(s & s2))
+# # isdisjoint
+print('isdisjoint no comparten elementos?',s3.isdisjoint(s2))
+print('isdisjoint no comparten elementos?',s.isdisjoint(s2))
+# # intersection_update realiza la actualizacion de la variable
+print('intersection_update compa',s2.intersection_update(s))
+print("New s2",s2)
+# # issubset
+print('issubset s in s2',s.issubset(s2))
+print('issubset s2 in s',s2.issubset(s))
+# issuperset
+print('issuperset s in s2',s.issuperset(s2))
+print('issuperset s2 in s',s2.issuperset(s))
 
-# 'clear', limpia toda la lista
-Lestudiantes.clear()
-# printListOTupleConIndice(Lestudiantes)
+# symmetric_difference
+print('symmetric_difference s y s2',s.symmetric_difference(s2))
+print('symmetric_difference_update s3 con s2',s3.symmetric_difference_update(s2))
+print('symmetric_difference_update s2 con s',s2.symmetric_difference_update(s))
+print("nuevo s2",s2)
+print("nuevo s3",s3)
 
-
-#imprimir porpiedades de la clase tupla
-# print(dir(TPropsEst))
-# 'count', para contar un elemento dentro de la tupla
-print(TPropsEst.count('itera'))
-# 'index' encontrar la pos de un elemento en la tupla
-print(TPropsEst.index('apellido'))
-
-TPropsEst=list(TPropsEst)
-detailVar(TPropsEst)
-TPropsEst[4]="Apellido"
-TPropsEst=tuple(TPropsEst)
-printListOTupleConIndice(TPropsEst)
-
-#Actualiacion de variabloes en lista
-listaAux = ['Camilo','Jose']
-
-lista2 = [Lestudiantes,listaAux]
-print(lista2)
-
-# Lestudiantes += 'Mariana' # de esta forma agrega cada caracter a la lista como si fuera un nuevo nombre
-Lestudiantes += ['Mariana']
-listaAux += ['Mariana']
-print(lista2)
-
-# funcion de sort con listas de tuplas
-# Asignación de tupla
-# set()
-
-
-
-
-
+# union
+print('union s2(s3)',s2.union(s3))
+print('union s2 | s3' ,(s2 | s3))
+print('union',(s | s2 |cText))
+# update
+print('update',s.update(Lestudiantes))
+print('before pop',s)
+# pop
+print('pop',s.pop())
+print('pop',s.pop())
+print('pop',s.pop())
+print('after pop',s)
+# clear
+print('clear',s.clear())
+print(s)
 
 # #creamos un diccionario para estudiantes desde la lista de estudiantes
 # dictEstudiantes = dict.fromkeys(listEstudiantes)
