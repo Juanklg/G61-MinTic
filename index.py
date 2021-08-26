@@ -1,22 +1,11 @@
-import funciones
-import crud
+import funciones as fn
 
-funciones.isLogin('Login')
+fn.isLogin('Login')
 #----------------------------------------------------------------------------
-print('Corriendo la app')
+print('Corriendo la app',__name__)
 
-entero = 123567
-texto = "Index Grupo"
-lista = [2.5,2.679]
-dic = {"Grupo":61,"Entero":128}
 
-# print(dir(funciones))
-funciones.detailArch(lista)
-funciones.detailArch(dic)
 
-# print(dir(crud))
-
-crud.read("task")
 
 
 # #creamos un diccionario para estudiantes desde la lista de estudiantes
