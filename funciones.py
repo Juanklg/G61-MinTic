@@ -239,7 +239,6 @@ def isLogin(user)->bool:
         exit()
     return login
 
-
 if __name__ == "__main__":
     rut = r"C:\Users\MakeDream\Desktop\Ruta1\G61-MinTic\dbTask.xlsx"    
     menuOriginal(rut)

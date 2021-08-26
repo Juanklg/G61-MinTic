@@ -1,10 +1,26 @@
 import funciones as fn
+from flask import Flask , render_template
 
 fn.isLogin('Login')
 #----------------------------------------------------------------------------
 print('Corriendo la app',__name__)
 
+#Configura la app
+app = Flask(__name__)
 
+# Crea las diferentes rutas
+@app.route("/")
+def hello_world():    
+    return "Hola Grupo 61"
+
+@app.route("/home")
+def index():
+    return render_template("index.html")
+
+# Aca inicia la aplicacion si es el archivo principal
+if __name__ == "__main__":
+    #debug=True me permite trabajar en desarrollo y actualizar el servidor cada vez que se hagan cambios
+    app.run(debug=True)
 
 
 
