@@ -9,8 +9,6 @@ import crud as crud
 #funciones {propias,python,class}
 #bucles o sentencias de control = {if,while,for}
 
-# print("Imprimiendo variable dunder name en funciones = ",__name__)
-
 def menuFinal(rut):
     #lista de parametros para creacion
     task = ("Nombre","Descripcion","Estado","Inicio","Fin")

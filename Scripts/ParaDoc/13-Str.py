@@ -104,6 +104,25 @@ numero = 0x31
 otroText = "he visto "+str(numero)+" numeros"
 # otroText = "he visto %x numeros" %numero
 print(otroText)
+#formateadores de texto
+nombre1 = 'Juliana'
+nombre2 = 'Julia'
+vector = [10,30,100]
+formateador = "¡Hola %s" % vector
+formateadordobl ="Hola %s - como estas %s" %(nombre1,nombre2)
+print(formateador)
+print(formateadordobl)
+
+#formtaeador con espacios 
+meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+for mes in meses:
+    print("* %10s * %-10s *"%(mes,mes))
+
+numero = 15
+flotante = 1/3
+#formato para numeros
+print("%s empezo en %s, formato de nuemro = %X" %("Python",1991,numero))
+print("El resulatdo del flotantes es %f pero formateado es %.2f"%(flotante,flotante))
 
 #caracteres especiales -> ej \n genera un enter entre los strings
 # otroText = "he visto "+str(numero)+" numeros"
