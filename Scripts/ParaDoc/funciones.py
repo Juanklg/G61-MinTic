@@ -1,4 +1,5 @@
 #Este es el archivo principal de nuestro proyecto
+
 #Variables {int,float,str,bool}
 #iterables o colecciones = {dict,list,tuple,set,range}
 #funciones {propias,python,class}
@@ -244,6 +245,7 @@ if __name__ == "__main__":
     rut = r"C:\Users\MakeDream\Desktop\Ruta1\G61-MinTic\dbTask.xlsx"    
     menuOriginal(rut)
 else: print("Corriendo como secundario",__name__)
+
 
 # #creamos un diccionario para estudiantes desde la lista de estudiantes
 

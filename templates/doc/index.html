@@ -2,13 +2,37 @@
 <html>
 
 <head>
-    <title>Doc 61</title>
+    <title>{{title}}</title>
 </head>
 
 <body>
-    <a href="http://localhost:5000/doc/jupyter">jupyter</a>
-    <a href="http://localhost:5000/doc/scripts">scripts</a>
-    <a href="http://localhost:5000/doc/turtle">turtle</a>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid rgb(199, 26, 26);
+        }
+    </style>
+    {% if title %}
+    <h2>{{title}}</h2>
+    {% else %}
+    <h2>Sin titulo</h2>
+    {% endif %}
+    
+    <table>
+        <tr>
+            <th>Recursos</th>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/doc/jupyter" target=”_blank”>Jupyter</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/doc/scripts" target=”_blank”>scripts</a></td>
+        </tr>
+        <tr>
+            <td><a href="http://localhost:5000/doc/turtle" target=”_blank”>turtle</a></td>
+        </tr>
+    </table>
 </body>
 
 </html>

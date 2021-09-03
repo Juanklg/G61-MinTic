@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <style>
+        #div1 {
+            width: 350px;
+            height: 70px;
+            padding: 10px;
+            border: 5px solid #ff1290;
+            margin-top: 200px;
+        }
+    </style>
+    <script>
+        $( document ).ready(function () {
+            console.log( "El docmuneto ya esta lista" );
+            $('#d2').text('Elemento de ayuda')
+            hola = $('#d2')
+        });               
+        var hola = 'Hola como estan'
+        function allowDrop(ev) {            
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            console.log('drag', ev.target.id)
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            text = $('#div1').text()
+            $('#d2').text(text)
+
+            
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));            
+        }
+        function alerta(){
+            alert('Cuidado esto es una alerta')
+        }
+    </script>
+</head>
+
+<body>
+    <p onclick="alerta()">Drag the W3Schools image into the rectangle:</p>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        Textode entrada del elemento
+    </div>
+    <br>
+    <img id="drag1" src="static/img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
+    <div id="d2"></div>
+</body>
+
+</html>
