@@ -6,25 +6,27 @@ print('Corriendo la app',__name__)
 # Inicializacion ------------------------------------------------
 #Configura la app
 app = Flask(__name__)
-# Crea las diferentes rutas -------------------------------------
+# Crea las diferentes rutas ----------------------------------------------------------------
 @app.route("/")
-def hello_world():    
+def Ehome():
     return render_template("index.html")
-    
+
 @app.route("/proy")
-def proy():
+def Eproy():
     s = fn.solicitarDoc()
-    print(s)    
-    return render_template("index.html")
+    print(s)
+    return render_template("proyecto.html")
     
 @app.route("/doc")
-def doc():
-    return render_template("doc/index.html")
+def Edoc():
+    title='Documentacion'
+    return render_template("doc/index.html",title=title)
+
 @app.route("/doc/<documento>")
-def docu(documento='index'):
+def Edocu(documento='index'):
     print(f'var = {documento}'.center(50,'-'))
     return render_template(f"doc/{documento}.html")
-# Cierre de rutas ---------------------------------------------- 
+# Cierre de rutas ------------------------------------------------------------------------------ 
 # Aca inicia la aplicacion si es el archivo principal
 if __name__ == "__main__":
     print("Main".center(50,'-'))
