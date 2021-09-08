@@ -1,0 +1,9 @@
+me ubico en la carpeta del proyecto
+crear una nueva rama (branch) llamada guia con el siguiente comando
+git branch guia
+ver las ramas con el siguente comando
+git branch
+cambiar de rama con el siguiente comando
+git checkout guia
+
+Tarea crear la rama con el nombre dev
