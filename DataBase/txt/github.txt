@@ -7,3 +7,5 @@ cambiar de rama con el siguiente comando
 git checkout guia
 
 Tarea crear la rama con el nombre dev
+
+Agrego script de graficas de la clase 8 de la seccion 1.4
