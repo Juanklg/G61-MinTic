@@ -25,9 +25,17 @@ detailVar(diccionario)
 #recorrer los elementos de un diccionario
 print(diccionario.items())
 
+elementos = []
 for key, valor in diccionario.items():
-    print(key, valor)
+    elementos.append((key, valor))
 else: print('----------------------------')
+print(elementos)
+for elemento in elementos:
+    print(elemento)
+elementos.sort(reverse=True)
+print('----------------------------')
+for elemento in elementos:
+    print(elemento)
 
 for termino in diccionario.keys():
     print(termino)
