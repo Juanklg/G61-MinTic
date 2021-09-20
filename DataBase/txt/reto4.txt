@@ -1,23 +1,24 @@
 tener el archivo csv
 crear una funcion que lea la informacion del archivo csv
-cerar un dataframe con el CSV
-calculos los procentajes solicitados
+crear un dataframe con el CSV
 la funcion debe retornar lista(list o []) con los siguientes indicadores
 
 -Promedio de edades de los infectados por departamentos
-    Debe contener los porcentajes por sexos, este diccionario debe tener como llaves las
-    letras “F” y “M” para femenino y masculino respectivamente, y como valor de estas llaves el
-    porcentaje correspondiente redondeado con 4 cifras decimales.
-
-    Ejemplo: {F: 55.5, M: 44.5}
-
--Promedio de porcentaje de infectados masculinos y femeninos
     Debe contener el promedio de edades por departamento, las llaves de este
     diccionario deben ser el nombre del departamento, mientras que los valores de estas llaves es el
     promedio de las edades de los casos en el respectivo departamento. Estos valores deben estar
     redondeados con 4 cifras decimales.
     
     Ejemplo: {Antioquía: 23.4554, Risaralda: 35.33, Amazonas: 31.4432}
+
+-Promedio de porcentaje de infectados masculinos y femeninos
+    Debe contener los porcentajes por sexos, este diccionario debe tener como llaves las
+    letras “F” y “M” para femenino y masculino respectivamente, y como valor de estas llaves el
+    porcentaje correspondiente redondeado con 4 cifras decimales.    
+
+    -tener en cuenta errores en el F y el M del sexo (Hay q limpiar esa columna)
+
+    Ejemplo: {F: 55.5, M: 44.5}
    
 -Porcentaje de la procedencia de los infectado
     El diccionario debe contar con el porcentaje de la procedencia de los infectados, es
@@ -26,13 +27,6 @@ la funcion debe retornar lista(list o []) con los siguientes indicadores
     los infectados y los valores de estas debe ser el porcentaje redondeado con 4 cifra decimales de
     infectado procedentes de ese país.
     Ejemplo {España: 20.32, Ecuador: 53.33, Francia: 26.35}
-
-tener en cuenta erores en el F y el M del sexo (Hay q limpiar esa columna)
-
-Esquema de la funcion
-
-def casos(ruta_archivo: str)-> dict:
-    pass
 
 respuesta esperada
 [

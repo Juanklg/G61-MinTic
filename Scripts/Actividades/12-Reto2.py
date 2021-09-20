@@ -1,6 +1,7 @@
 #asi se define una funcion
 def dentroDelRango(v:int,vm=5,vM=35)->str:
     res = None
+    print(res,type(res))
     #esta validacion retorna un true o un false
     dentroRango = v >= vm and v <= vM
     #
@@ -13,7 +14,7 @@ def dentroDelRango(v:int,vm=5,vM=35)->str:
     El valor a validar dentro del rango
     El valor minimo del rango
     El valor maximo del rango
-    '''
+    '''    
     return res
 
 #la plataforma del curso se encargara de lo siguiente
