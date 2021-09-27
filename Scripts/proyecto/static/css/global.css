@@ -1,0 +1,234 @@
+/* *{
+    color: blanchedalmond;
+} */
+
+body{
+    background-color: grey;
+}
+
+/* Box model */
+.box-1{
+    width: 100px;
+    height: 100px;
+    background: lime;
+    margin: 20px;
+    
+    padding: 50px;
+    border: 5px dotted red;
+    border-top-color: transparent;
+}
+.box-2{
+    width: 100px;
+    height: 100px;
+    background: lightcoral;
+    margin: 80px;
+    border-left: 5px dotted lightseagreen;
+    /* border-left-style: dotted;
+    border-left-color: lightseagreen; */    
+}
+/* box-sizing */
+.box-3{
+    box-sizing: border-box;    
+    width: 100px;
+    height: 100px;
+    background: lime;
+    margin: 20px;    
+    padding: 50px;
+    border: 5px dotted red;
+    border-top-color: transparent;
+}
+.box-4{
+    width: 100px;
+    height: 100px;
+    background: lightcoral;
+    margin: 20px;
+    border: 5px dotted lightseagreen;
+    /* border-left-style: dotted;
+    border-left-color: lightseagreen; */    
+}
+
+
+/* position */
+[class^='relativo']{
+    border: 3px dashed blue;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+main > h2{
+    background-color: thistle;
+}
+
+.relativo-2{
+    position: relative;    
+    bottom: 53px;
+    left: 53px;
+    background-color: tomato;
+    z-index: 1;
+}
+
+[class^='absolute']{
+    border: 3px dashed yellowgreen;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.divAbs{
+    position: relative;
+    height: 400px;    
+    background-color: wheat;
+    z-index: 2;
+}
+
+.absolute-1{
+    /* position: absolute; */
+    top: 100px;
+    left: 200px;
+}
+.absolute-2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.fixed-1{
+    position: fixed;
+    background-color: teal;
+    margin: 20px;
+    padding: 20px;
+    bottom: 0;
+    right: 0;
+}
+
+.menu{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    background-color: turquoise;
+    text-align: center;
+    z-index: 2;
+}
+
+section {
+    width: 400px;
+    margin: 0 auto; 
+}
+
+.user {
+    width: 400px;
+    height: 165px;
+    margin: 32px 0;
+    border: 3px solid #E18728;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.user a{
+    display: block;
+}
+
+.user img {
+    padding: .5em;
+    float: left;
+}
+
+/* Busqueda por valor del atributo */
+[href='#styleLine']{
+    color: green;
+}
+/* Busqueda por atributo */
+[for]{
+    /* color: green; */
+    margin: 30px;
+}
+/* Busqueda por clase */
+.pruebaClass{
+    background-color: blueviolet;
+    color: whitesmoke;
+}
+/* busqueda por id */
+#miparrafo {
+    max-width: 500px;
+}
+/* q lo contenga */
+[class~='bg']{
+    background-color: dodgerblue;
+}
+/* q inicie con o antes d un guion */
+[class|='border']{
+    border: 2px dashed black;
+}
+/* q inicie con */
+[class^='border']{
+    border-radius: 7px;
+}
+/* Q termine con  */
+[class$='bg']{
+    padding: 20px;
+}
+/* Q contenga el valor */
+[class*='center']{
+    text-align: center;
+}
+
+/* selecciona a un hermano justo debajo */
+h6+h5{
+    color: red;
+}
+/* selecciona a sus hermanos del tipo seleccionado */
+h5~h6{
+    background-color: chocolate;
+}
+/* captura a todos sus hijos del tipo y sub hijos*/
+div h5{
+    border-radius: 5px;
+    border-style: double;
+}
+/* hijos directos de .hijos */
+.hijos > h5{
+    border-color: cyan;
+}
+
+.border-center-bg{
+    color:darkred !important;
+}
+
+a{
+    color: inherit;
+}
+
+.border-center-bg{
+    color:rosybrown;
+}
+
+.title{
+    color: azure;
+}
+
+.imagenes {
+    width: 100%;
+}
+
+main{
+    background-color: yellowgreen;    
+    float: right;
+    min-width: 400px;
+    max-width: 80%;
+
+}
+aside{
+    background-color: yellow;
+    max-width: 250px;
+    float: left;
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: DarkSalmon;
+    color: white;
+    clear: both;
+}
