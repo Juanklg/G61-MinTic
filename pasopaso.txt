@@ -1,0 +1,21 @@
+Entrar a la carpeta de django desde el terminal 
+
+- Crear el ambiente virtual para instalar las dependencias
+python -m venv venv
+
+- Activar venv
+. venv/Scripts/activate
+
+- Una ve activado, instalamos django
+pip install django
+
+- Crear mi aplicacion de django
+django-admin startproject django61
+
+- Crear instancia de base de datos dentro de la carpeta del proyecto
+Python manage.py migrate
+- Ejecutamos el servidor de desarrollo
+Python manage.py runserver
+
+- Generar el primer archivo de vista (views.py)
+- modificar la lista de url en el archivo urls.py, agregando el endpoint y la funcion que se ejecuta
