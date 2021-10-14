@@ -4,11 +4,13 @@ import datetime
 from django.template import loader,Template,Context
 
 def calculo(request,fechaNacimiento,FechaFutura):
-    añoActual = datetime.datetime.now().year
+    fecha = datetime.datetime.now()
+    añoActual = fecha.year
     edadActual = añoActual-fechaNacimiento
     edadFutura = FechaFutura-fechaNacimiento
     diccionario = {
         'nombre':'Pagina de calculo',
+        'fecha':fecha,
         'actual':añoActual,
         'edadActual':edadActual,
         'edadFutura':edadFutura,
