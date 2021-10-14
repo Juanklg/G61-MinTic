@@ -18,8 +18,8 @@ from django.urls import path
 from django61.views import saludar,fecha,calculo
 
 urlpatterns = [
+    path('', saludar),
     path('admin/', admin.site.urls),
-    path('saludar/', saludar),
     path('fecha/', fecha),
     path('calculo/<int:fechaNacimiento>/<int:FechaFutura>/',calculo)
 ]
