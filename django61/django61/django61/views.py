@@ -1,8 +1,7 @@
 from os import read
 from django.http import HttpResponse
 import datetime
-
-from django.template import Template,Context
+from django.template import loader,Template,Context
 
 def calculo(request,fechaNacimiento,FechaFutura):
     fechaActual = datetime.datetime.now().year
@@ -24,16 +23,6 @@ def saludar(request):
 
 def fecha(request):
     fechaActual = datetime.datetime.now()
-    docu='''
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Page Title</title>
-    </head>
-    <body>
-        <h1>Esto es un titulo generado %s</h1>
-        <p>esto es un parrafo</p>
-    </body>
-    </html>
-    ''' % fechaActual
+    tpl = loader.get_template('layout.html')
+    docu = tpl.render({'fecha':fechaActual})
     return HttpResponse(docu)

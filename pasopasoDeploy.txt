@@ -20,6 +20,8 @@ Python manage.py runserver
 - Generar el primer archivo de vista (views.py)
 - modificar la lista de url en el archivo urls.py, agregando el endpoint y la funcion que se ejecuta
 
+########  paso a paso rapido ########
+
 - pip install django
 - django-admin startproject xxxxxxxxx
 - python manage.py runserver
