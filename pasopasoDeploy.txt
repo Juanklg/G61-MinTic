@@ -1,3 +1,15 @@
+########  paso a paso rapido ########
+para instalar django
+- pip install django
+
+Para crear un nuevo proyecto
+- django-admin startproject xxxxxxxxx
+
+Para ejecutar el proyecto en modo desarrollo
+- python manage.py runserver
+
+########  paso a paso con entorno virtual para produccion ########
+
 Entrar a la carpeta de django desde el terminal 
 
 - Crear el ambiente virtual para instalar las dependencias
@@ -20,8 +32,3 @@ Python manage.py runserver
 - Generar el primer archivo de vista (views.py)
 - modificar la lista de url en el archivo urls.py, agregando el endpoint y la funcion que se ejecuta
 
-########  paso a paso rapido ########
-
-- pip install django
-- django-admin startproject xxxxxxxxx
-- python manage.py runserver

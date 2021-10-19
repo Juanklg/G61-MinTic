@@ -1,7 +1,7 @@
 from os import read
 from django.http import HttpResponse
 import datetime
-from django.template import loader,Template,Context
+from django.template import loader
 
 def calculo(request,fechaNacimiento,FechaFutura):
     fecha = datetime.datetime.now()
@@ -40,5 +40,19 @@ def fecha(request):
     }
 
     tpl = loader.get_template('layout.html')
+    docu = tpl.render(diccionario)
+    return HttpResponse(docu)
+
+def taskList(req):
+    diccionario = {
+        "nombre":'Lista de tareas',
+        "nameList":'Tareas django',
+        "tareas":[
+            'Crear el html del header',
+            'Modularizar el header',
+            'Hacer los mimo con el footer',
+        ]
+    }
+    tpl = loader.get_template('tasklist.html')
     docu = tpl.render(diccionario)
     return HttpResponse(docu)
