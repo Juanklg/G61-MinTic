@@ -7,17 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block head %}
-
     {% endblock %}
+    
+    {% if title %}
+        <title>{{title}}</title>
+    {% endif %}
 </head>
 
 <body>
-    <h1>{{nombre}}</h1>
-    <h2>Pagina generada con templates django en la fecha {{fecha}}</h2>
-    
-    {% block main %}
-    
-    {% endblock %}
+    {% include 'layout/header.html' %}
+    <main>
+        {% include 'layout/aside.html' %}
+
+        {% block main %}
+        {% endblock %}
+    </main>
+    {% include 'layout/footer.html' %}
 </body>
 
 </html>

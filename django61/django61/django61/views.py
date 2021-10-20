@@ -26,6 +26,7 @@ def saludar(request):
     diccionario = {
         'fecha':fechaActual,
         'nombre':'Pagina de Bienvenida',
+        'title':'***Welcome***'
     }
     tpl = loader.get_template('layout.html')
     docu = tpl.render(diccionario)
@@ -44,7 +45,9 @@ def fecha(request):
     return HttpResponse(docu)
 
 def taskList(req):
+    fechaActual = datetime.datetime.now()
     diccionario = {
+        "fecha":fechaActual,
         "nombre":'Lista de tareas',
         "nameList":'Tareas django',
         "tareas":[
