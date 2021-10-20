@@ -8,6 +8,25 @@ Para crear un nuevo proyecto
 Para ejecutar el proyecto en modo desarrollo
 - python manage.py runserver
 
+
+########  paso a paso nueva pagina ########
+1- Crear archivo html dentro de la carpeta templates
+2- Crear el path dentro del archivo urls.py en la lista del final
+3- importar en urls.py la funcion desde views.py
+4- Crear la funcion dentro del views
+5- actualizar el loader en la funcion del views con el nombre del archivo html
+6- (Opcional) Agregar fecha, nombre y title a el diccionario en la funcion del views
+7- (Opcional) Agregar el link en el header.html
+8- Agregar en el archivo html creado en el paso 1, en el block main con el contenido de la pagina
+
+
+
+
+
+
+
+
+
 ########  paso a paso con entorno virtual para produccion ########
 
 Entrar a la carpeta de django desde el terminal 

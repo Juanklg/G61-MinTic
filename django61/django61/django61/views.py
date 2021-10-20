@@ -59,3 +59,14 @@ def taskList(req):
     tpl = loader.get_template('tasklist.html')
     docu = tpl.render(diccionario)
     return HttpResponse(docu)
+
+def videos(req):
+    fechaActual = datetime.datetime.now()
+    diccionario = {
+        'title':'***Videos***',
+        'nombre':'Videos Youtube',
+        'fecha':fechaActual,
+    }
+    tpl = loader.get_template('videos.html')
+    docu = tpl.render(diccionario)
+    return HttpResponse(docu)
