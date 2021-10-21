@@ -8,6 +8,43 @@ Para crear un nuevo proyecto
 Para ejecutar el proyecto en modo desarrollo
 - python manage.py runserver
 
+######## creacion de mini apps en django ########
+crear una app llamada gestor(junto a manage.py)
+-python manage.py startapp gestor
+
+agregar nombre de la app a lista de INSTALLED_APPS en settings
+
+crear los modelos dentro de el archivo modelos en gestor
+
+cree los modelos en base de datos
+-python manage.py makemigrations
+
+ejecute el archiv creado para crear las tablas en la base de datos
+-python manage.py sqlmigrate gestor 0001
+
+aplicamos las migraciones
+-python manage.py migrate
+
+########  correr un terminal para python con django ########
+-python manage.py shell
+
+crear registro
+- art1 = articulo.objects.create(nombre='silla',seccion='hogar',precio=500)
+- art2 = articulo.objects.create(nombre='zapatos',seccion='caballeros',precio=200)
+
+actualizar registro
+- art1.precio = 555
+- art1.save()
+
+leer un registro
+- art3 = articulo.objects.get(id=4)
+
+borrar un registro
+- art3.delete()
+
+
+
+
 
 ########  paso a paso nueva pagina ########
 1- Crear archivo html dentro de la carpeta templates

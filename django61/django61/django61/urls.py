@@ -20,8 +20,11 @@ from django61.views import saludar,fecha,calculo,taskList,videos
 urlpatterns = [
     path('', saludar),
     path('admin/', admin.site.urls),
+    
     path('fecha/', fecha),
+
     path('calculo/<int:fechaNacimiento>/<int:FechaFutura>/',calculo),
+    
     path('tasklist/', taskList),
     path('videos/', videos),
 ]
