@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<section class="addArticulo">
+    <form action="/respuesta" method="get">
+        <!-- nombre -->
+        <label>
+            Agrege nombre del producto:
+            <input type="text" name="nombre">
+        </label>
+        <!-- seccion -->
+        <!-- precio -->
+        <input type="submit" value="Agregar">
+    </form>
+</section>
+
+{% endblock %}

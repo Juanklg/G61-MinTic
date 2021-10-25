@@ -1,22 +1,22 @@
 {% extends 'layout.html' %}
 
 {% block head %}
-    <title>***TaskList***</title>
+<title>***TaskList***</title>
 {% endblock %}
 
 {% block main %}
-
+<section>
     {% if nameList %}
-        <h2>{{nameList|upper}}</h2>
+    <h2>{{nameList|upper}}</h2>
     {% else %}
-        <h2>Lista sin titulo</h2>
+    <h2>Lista sin titulo</h2>
     {% endif %}
 
     <ol>
         {% for tarea in tareas %}
-            <li>{{tarea}}</li>
+        <li>{{tarea}}</li>
         {% endfor %}
     </ol>
-    
-{% endblock %}
 
+</section>
+{% endblock %}

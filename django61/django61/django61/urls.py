@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django61.views import saludar,fecha,calculo,taskList,videos
+# from django61.views import saludar,fecha,calculo,taskList,videos,addArticulo
+from django61.views import *
 
 urlpatterns = [
     path('', saludar),
@@ -27,4 +28,8 @@ urlpatterns = [
     
     path('tasklist/', taskList),
     path('videos/', videos),
+
+    # rutas agregadas para creacion de articulos
+    path('addArticulo/', addArticulo),
+    path('respuesta/', respuesta),
 ]

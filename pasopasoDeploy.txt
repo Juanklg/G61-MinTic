@@ -8,15 +8,17 @@ Para crear un nuevo proyecto
 Para ejecutar el proyecto en modo desarrollo
 - python manage.py runserver
 
-######## creacion de mini apps en django ########
+######## creacion de mini apps en django con db ########
 crear una app llamada gestor(junto a manage.py)
 -python manage.py startapp gestor
 
 agregar nombre de la app a lista de INSTALLED_APPS en settings
 
-crear los modelos dentro de el archivo modelos en gestor
+crear los modelos dentro de el archivo modelos.py en gestor
 
-cree los modelos en base de datos
+######## creacion de tablas en db segun modelo########
+Esto se ejecuta en la primera creacion y cada vez q actualicemos algun modelo
+cree la migracion en carpeta migrations
 -python manage.py makemigrations
 
 ejecute el archiv creado para crear las tablas en la base de datos
@@ -28,6 +30,9 @@ aplicamos las migraciones
 ########  correr un terminal para python con django ########
 -python manage.py shell
 
+para hacer uso de la base de datos con algun modelo debo importarlo primero
+- from gestor.models import articulo
+
 crear registro
 - art1 = articulo.objects.create(nombre='silla',seccion='hogar',precio=500)
 - art2 = articulo.objects.create(nombre='zapatos',seccion='caballeros',precio=200)
@@ -37,24 +42,26 @@ actualizar registro
 - art1.save()
 
 leer un registro
-- art3 = articulo.objects.get(id=4)
+- art3 = articulo.objects.get(id=3)
+
+otro update
+- art3.precio = 22
+- art3.save()
 
 borrar un registro
 - art3.delete()
 
 
-
-
-
 ########  paso a paso nueva pagina ########
 1- Crear archivo html dentro de la carpeta templates
 2- Crear el path dentro del archivo urls.py en la lista del final
-3- importar en urls.py la funcion desde views.py
+3- importar en urls.py la funcion desde views.py (from django61.views import *) me ahorra este paso
 4- Crear la funcion dentro del views
 5- actualizar el loader en la funcion del views con el nombre del archivo html
 6- (Opcional) Agregar fecha, nombre y title a el diccionario en la funcion del views
-7- (Opcional) Agregar el link en el header.html
-8- Agregar en el archivo html creado en el paso 1, en el block main con el contenido de la pagina
+7- (Opcional) Agregar el link en el header.html (o en el aside)
+8- Agregar en el archivo html creado en el paso 1, el block main con el contenido de la pagina
+    (copiar ejemplo de otro template)
 
 
 

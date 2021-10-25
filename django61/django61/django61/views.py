@@ -1,7 +1,26 @@
-from os import read
 from django.http import HttpResponse
 import datetime
 from django.template import loader
+from django.shortcuts import render
+
+def respuesta(request):
+    nombre = request.GET['nombre']
+    mensaje = f'Articulo {nombre} ha sido creado'
+    print(mensaje)
+    return HttpResponse(mensaje)
+
+def addArticulo (request):
+    fechaActual = datetime.datetime.now()
+    diccionario = {
+        'fecha':fechaActual,
+        'nombre':'Articulos',
+        'title':'***Articulo***'
+    }
+    return render(request,'addArticulo.html')  
+    # # tpl = loader.get_template('addArticulo.html')
+    # docu = tpl.render(diccionario)
+    # return HttpResponse(docu)
+
 
 def calculo(request,fechaNacimiento,FechaFutura):
     fecha = datetime.datetime.now()
@@ -70,3 +89,4 @@ def videos(req):
     tpl = loader.get_template('videos.html')
     docu = tpl.render(diccionario)
     return HttpResponse(docu)
+
