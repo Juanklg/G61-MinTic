@@ -2,15 +2,24 @@
 
 {% block main %}
 
+<style>
+    .addArticulo form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+</style>
 <section class="addArticulo">
     <form action="/respuesta" method="get">
         <!-- nombre -->
-        <label>
-            Agrege nombre del producto:
-            <input type="text" name="nombre">
-        </label>
+        <label>Agrege nombre del producto:
+            <input type="text" name="nombre"></label>
         <!-- seccion -->
+        <label>Agrege seccion del producto:
+            <input type="text" name="seccion"></label>
         <!-- precio -->
+        <label>Agrege precio del producto:
+            <input type="number" name="precio"></label>
         <input type="submit" value="Agregar">
     </form>
 </section>

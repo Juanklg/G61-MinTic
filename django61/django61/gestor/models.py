@@ -8,7 +8,7 @@ class cliente(models.Model):
     telefono=models.CharField(max_length=15)
 
 class articulo(models.Model):
-    nombre=models.CharField(max_length=30)
+    nombre=models.CharField(max_length=30,unique=True)
     seccion=models.CharField(max_length=30)
     precio=models.IntegerField()
 

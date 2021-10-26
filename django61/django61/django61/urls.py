@@ -31,5 +31,6 @@ urlpatterns = [
 
     # rutas agregadas para creacion de articulos
     path('addArticulo/', addArticulo),
+    path('readArticulos/', readArticulos),
     path('respuesta/', respuesta),
 ]

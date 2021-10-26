@@ -2,12 +2,33 @@ from django.http import HttpResponse
 import datetime
 from django.template import loader
 from django.shortcuts import render
+from gestor.models import *
+
+
 
 def respuesta(request):
     nombre = request.GET['nombre']
-    mensaje = f'Articulo {nombre} ha sido creado'
-    print(mensaje)
-    return HttpResponse(mensaje)
+    seccion = request.GET['seccion']
+    precio = request.GET['precio']
+    art1 = articulo.objects.create(nombre=nombre,seccion=seccion,precio=precio)
+    if(art1):
+        HttpResponse(art1)
+    else:
+        mensaje = f'Articulo {nombre} ha sido creado en la seccion {seccion} con un precio de {precio}'
+        return HttpResponse(mensaje)
+
+def readArticulos(request):
+
+    diccionario = {
+        'articulos':[
+            {
+                'nombre':'laso',
+                'seccion':'ferreteria',
+                'precio':30
+            }
+        ]
+    }
+    return render(request, 'readArticulos.html',diccionario)
 
 def addArticulo (request):
     fechaActual = datetime.datetime.now()
@@ -16,11 +37,10 @@ def addArticulo (request):
         'nombre':'Articulos',
         'title':'***Articulo***'
     }
-    return render(request,'addArticulo.html')  
+    return render(request,'addArticulo.html',diccionario)  
     # # tpl = loader.get_template('addArticulo.html')
     # docu = tpl.render(diccionario)
     # return HttpResponse(docu)
-
 
 def calculo(request,fechaNacimiento,FechaFutura):
     fecha = datetime.datetime.now()

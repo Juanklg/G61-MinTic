@@ -1,4 +1,4 @@
-########  paso a paso rapido ########
+########  paso a paso rapido instalaciondjango########
 para instalar django
 - pip install django
 
@@ -60,7 +60,7 @@ borrar un registro
 5- actualizar el loader en la funcion del views con el nombre del archivo html
 6- (Opcional) Agregar fecha, nombre y title a el diccionario en la funcion del views
 7- (Opcional) Agregar el link en el header.html (o en el aside)
-8- Agregar en el archivo html creado en el paso 1, el block main con el contenido de la pagina
+8- Agregar en el archivo html creado en el paso 1, en el block main el contenido de la pagina
     (copiar ejemplo de otro template)
 
 
