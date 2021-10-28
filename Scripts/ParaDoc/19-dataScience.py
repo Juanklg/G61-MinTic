@@ -189,6 +189,8 @@ df = pd.DataFrame(np.arange(15).reshape([3, 5]),
                   index = ["a", "b", "c"],
                   columns = ["A", "B", "C", "D", "E"])
 print(df)
+diccionario = df.to_dict()
+print(diccionario)
 print(df.pop('B'))
 print(df)
 print(df.drop(["a", "c"], axis = 0))
