@@ -1,7 +1,49 @@
-from os import read
 from django.http import HttpResponse
 import datetime
 from django.template import loader
+from django.shortcuts import render
+
+
+from gestor.models import *
+
+def respuesta(request):
+    nombre = request.GET['nombre']
+    seccion = request.GET['seccion']
+    precio = request.GET['precio']
+    art1 = articulo.objects.create(nombre=nombre,seccion=seccion,precio=precio)
+    if(art1):
+        HttpResponse(art1)
+    else:
+        mensaje = f'Articulo {nombre} ha sido creado en la seccion {seccion} con un precio de {precio}'
+        return HttpResponse(mensaje)
+
+def addArticulo(request):    
+    fechaActual = datetime.datetime.now()
+    art1 = Articulo.objects.create(nombre=request.GET['nombre'],seccion=request.GET['seccion'],precio=request.GET['precio'])
+    articulo = Articulo.objects.filter()
+    diccionario = {
+        'fecha':fechaActual,
+        'nombre':'Articulo',
+        'title':'***Articulo***',
+        'articulo':articulo
+    }
+    return render(request,'Articulo.html',diccionario) 
+
+def articulo (request):
+    fechaActual = datetime.datetime.now()
+    articulo = Articulo.objects.all()
+    seccion = Seccion.objects.all()
+    diccionario = {
+        'fecha':fechaActual,
+        'nombre':'Articulo',
+        'title':'***Articulo***',
+        'articulo':articulo.values(),
+        'seccion':seccion.values()
+    }
+    return render(request,'Articulo.html',diccionario)  
+    # # tpl = loader.get_template('addArticulo.html')
+    # docu = tpl.render(diccionario)
+    # return HttpResponse(docu)
 
 def calculo(request,fechaNacimiento,FechaFutura):
     fecha = datetime.datetime.now()
@@ -70,3 +112,4 @@ def videos(req):
     tpl = loader.get_template('videos.html')
     docu = tpl.render(diccionario)
     return HttpResponse(docu)
+

@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/Articulo.css">
+{% endblock %}
+
+{% block main %}
+
+<style>
+    .addArticulo form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .readArticulo{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+    }
+</style>
+
+<section class="addArticulo">
+    <form action="/addArticulo" method="get">
+        <!-- nombre -->
+        <label>Agrege nombre del producto:
+            <input type="text" maxlength="30" name="nombre"></label>
+        <!-- seccion -->
+        <label>Agrege seccion del producto:
+            <!-- <select name="seccion"> -->
+                {# for sec in seccion #}
+                <!-- <option value="{{sec.nombre}}">{{sec.nombre}}</option> -->
+                {# endfor #}
+            <!-- </select> -->
+            <input list="secciones" name="seccion">
+            <datalist id="secciones">
+                {% for sec in seccion %}
+                <option value="{{sec.nombre|upper}}">
+                {% endfor %}
+            </datalist>
+        </label>
+
+        <!-- precio -->
+        <label>Agrege precio del producto:
+            <input type="number" name="precio"></label>
+        <input type="submit" value="Agregar">
+    </form>
+</section>
+
+<section class="readArticulo">
+    {% if articulo %}
+        {% for art in articulo %}
+            <div class="Articulo">
+                <div class="nombre">{{art.nombre}}</div>
+                <div class="seccion">{{art.seccion}}</div>
+                <div class="precio">{{art.precio}}</div>
+                <div class="acciones">
+                    <a href="/editArticulo/{{art.nombre}}">
+                        <img src="/static/img/edit.svg" alt="edit"/>
+                    </a>
+                    <a href="/deleteArticulo/{{art.nombre}}">
+                        <img src="/static/img/delete.svg" alt="delete"/>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+
+{% endblock %}
