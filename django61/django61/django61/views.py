@@ -2,9 +2,9 @@ from django.http import HttpResponse
 import datetime
 from django.template import loader
 from django.shortcuts import render
+
+
 from gestor.models import *
-
-
 
 def respuesta(request):
     nombre = request.GET['nombre']
@@ -17,27 +17,30 @@ def respuesta(request):
         mensaje = f'Articulo {nombre} ha sido creado en la seccion {seccion} con un precio de {precio}'
         return HttpResponse(mensaje)
 
-def readArticulos(request):
-
-    diccionario = {
-        'articulos':[
-            {
-                'nombre':'laso',
-                'seccion':'ferreteria',
-                'precio':30
-            }
-        ]
-    }
-    return render(request, 'readArticulos.html',diccionario)
-
-def addArticulo (request):
+def addArticulo(request):    
     fechaActual = datetime.datetime.now()
+    art1 = Articulo.objects.create(nombre=request.GET['nombre'],seccion=request.GET['seccion'],precio=request.GET['precio'])
+    articulo = Articulo.objects.filter()
     diccionario = {
         'fecha':fechaActual,
-        'nombre':'Articulos',
-        'title':'***Articulo***'
+        'nombre':'Articulo',
+        'title':'***Articulo***',
+        'articulo':articulo
     }
-    return render(request,'addArticulo.html',diccionario)  
+    return render(request,'Articulo.html',diccionario) 
+
+def articulo (request):
+    fechaActual = datetime.datetime.now()
+    articulo = Articulo.objects.all()
+    seccion = Seccion.objects.all()
+    diccionario = {
+        'fecha':fechaActual,
+        'nombre':'Articulo',
+        'title':'***Articulo***',
+        'articulo':articulo.values(),
+        'seccion':seccion.values()
+    }
+    return render(request,'Articulo.html',diccionario)  
     # # tpl = loader.get_template('addArticulo.html')
     # docu = tpl.render(diccionario)
     # return HttpResponse(docu)

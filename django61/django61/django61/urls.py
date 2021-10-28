@@ -30,7 +30,6 @@ urlpatterns = [
     path('videos/', videos),
 
     # rutas agregadas para creacion de articulos
-    path('addArticulo/', addArticulo),
-    path('readArticulos/', readArticulos),
-    path('respuesta/', respuesta),
+    path('articulo/', articulo),
+    path('addArticulo/', addArticulo)
 ]
