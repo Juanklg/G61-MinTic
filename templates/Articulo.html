@@ -5,22 +5,6 @@
 {% endblock %}
 
 {% block main %}
-
-<style>
-    .addArticulo form{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .readArticulo{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 30px;
-    }
-</style>
-
 <section class="addArticulo">
     <form action="/addArticulo" method="get">
         <!-- nombre -->
@@ -29,18 +13,25 @@
         <!-- seccion -->
         <label>Agrege seccion del producto:
             <!-- <select name="seccion"> -->
-                {# for sec in seccion #}
-                <!-- <option value="{{sec.nombre}}">{{sec.nombre}}</option> -->
-                {# endfor #}
+            {# for sec in seccion #}
+            <!-- <option value="{{sec.nombre}}">{{sec.nombre}}</option> -->
+            {# endfor #}
             <!-- </select> -->
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
             <input list="secciones" name="seccion">
             <datalist id="secciones">
                 {% for sec in seccion %}
                 <option value="{{sec.nombre|upper}}">
-                {% endfor %}
+                    {% endfor %}
             </datalist>
         </label>
-
         <!-- precio -->
         <label>Agrege precio del producto:
             <input type="number" name="precio"></label>
@@ -48,24 +39,18 @@
     </form>
 </section>
 
+{% if articulo %}
 <section class="readArticulo">
-    {% if articulo %}
-        {% for art in articulo %}
-            <div class="Articulo">
-                <div class="nombre">{{art.nombre}}</div>
-                <div class="seccion">{{art.seccion}}</div>
-                <div class="precio">{{art.precio}}</div>
-                <div class="acciones">
-                    <a href="/editArticulo/{{art.nombre}}">
-                        <img src="/static/img/edit.svg" alt="edit"/>
-                    </a>
-                    <a href="/deleteArticulo/{{art.nombre}}">
-                        <img src="/static/img/delete.svg" alt="delete"/>
-                    </a>
-                </div>
-            </div>
-        {% endfor %}
-    {% endif %}
+    {% for art in articulo %}
+    <div class="card border-dark mb-3">
+        <div class="card-header">{{art.nombre}}</div>
+        <div class="card-body">
+            <h4 class="card-title">$ {{art.precio}}</h4>
+            <p class="card-text">{{art.seccion}}</p>
+        </div>
+    </div>
+    {% endfor %}
 </section>
+{% endif %}
 
 {% endblock %}

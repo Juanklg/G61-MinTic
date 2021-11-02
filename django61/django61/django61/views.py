@@ -31,19 +31,23 @@ def addArticulo(request):
 
 def articulo (request):
     fechaActual = datetime.datetime.now()
+    secciones = []
     articulo = Articulo.objects.all()
-    seccion = Seccion.objects.all()
     diccionario = {
         'fecha':fechaActual,
         'nombre':'Articulo',
         'title':'***Articulo***',
+        'theme':'Quartz',
+        'theme':'Sketchy',
         'articulo':articulo.values(),
-        'seccion':seccion.values()
+        'seccion':secciones
     }
     return render(request,'Articulo.html',diccionario)  
     # # tpl = loader.get_template('addArticulo.html')
     # docu = tpl.render(diccionario)
     # return HttpResponse(docu)
+
+# Old Learn django
 
 def calculo(request,fechaNacimiento,FechaFutura):
     fecha = datetime.datetime.now()

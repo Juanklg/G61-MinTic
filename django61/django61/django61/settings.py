@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_SQLITE = "C:/Users/MakeDream/Dropbox/Docs/sqlite/"
 
 
 # Quick-start development settings - unsuitable for production
@@ -55,8 +56,8 @@ ROOT_URLCONF = 'django61.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [r'C:\Users\MakeDream\Desktop\Ruta1\G61-MinTic\templates'],
-        'DIRS': [r'C:\Users\Juan\Desktop\ruta1\G61-MinTic\templates'],
+        'DIRS': [r'C:\Users\MakeDream\Desktop\Ruta1\G61-MinTic\templates'],
+        # 'DIRS': [r'C:\Users\Juan\Desktop\ruta1\G61-MinTic\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,7 +79,8 @@ WSGI_APPLICATION = 'django61.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_SQLITE + 'G61.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -122,8 +124,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    r"C:\Users\Juan\Desktop\ruta1\G61-MinTic\static"
-    # r"C:\Users\MakeDream\Desktop\Ruta1\G61-MinTic\static"
+    # r"C:\Users\Juan\Desktop\ruta1\G61-MinTic\static"
+    r"C:\Users\MakeDream\Desktop\Ruta1\G61-MinTic\static"
 ]
 
 # Default primary key field type

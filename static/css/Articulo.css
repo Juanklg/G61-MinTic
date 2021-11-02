@@ -1,1 +1,21 @@
 /* @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css"); */
+.addArticulo form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.readArticulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 30px;
+    padding: 50px;
+}
+.card-header,.card-text{
+    text-transform: capitalize;
+}
+.card{
+    width: 20rem;
+}
