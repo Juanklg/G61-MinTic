@@ -4,49 +4,6 @@ from django.template import loader
 from django.shortcuts import render
 
 
-from gestor.models import *
-
-def respuesta(request):
-    nombre = request.GET['nombre']
-    seccion = request.GET['seccion']
-    precio = request.GET['precio']
-    art1 = articulo.objects.create(nombre=nombre,seccion=seccion,precio=precio)
-    if(art1):
-        HttpResponse(art1)
-    else:
-        mensaje = f'Articulo {nombre} ha sido creado en la seccion {seccion} con un precio de {precio}'
-        return HttpResponse(mensaje)
-
-def addArticulo(request):    
-    fechaActual = datetime.datetime.now()
-    art1 = Articulo.objects.create(nombre=request.GET['nombre'],seccion=request.GET['seccion'],precio=request.GET['precio'])
-    articulo = Articulo.objects.filter()
-    diccionario = {
-        'fecha':fechaActual,
-        'nombre':'Articulo',
-        'title':'***Articulo***',
-        'articulo':articulo
-    }
-    return render(request,'Articulo.html',diccionario) 
-
-def articulo (request):
-    fechaActual = datetime.datetime.now()
-    secciones = []
-    articulo = Articulo.objects.all()
-    diccionario = {
-        'fecha':fechaActual,
-        'nombre':'Articulo',
-        'title':'***Articulo***',
-        'theme':'Quartz',
-        'theme':'Sketchy',
-        'articulo':articulo.values(),
-        'seccion':secciones
-    }
-    return render(request,'Articulo.html',diccionario)  
-    # # tpl = loader.get_template('addArticulo.html')
-    # docu = tpl.render(diccionario)
-    # return HttpResponse(docu)
-
 # Old Learn django
 
 def calculo(request,fechaNacimiento,FechaFutura):
