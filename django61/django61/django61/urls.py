@@ -3,14 +3,16 @@ from django.urls import path,include
 from django61.views import *
 
 urlpatterns = [
-    path('', saludar),
+    path('', videos,name='home'),
     path('admin/', admin.site.urls),
-    
     path('fecha/', fecha),
-
     path('calculo/<int:fechaNacimiento>/<int:FechaFutura>/',calculo),
-    
     path('tasklist/', taskList),
     path('videos/', videos),
-    path('articulo/', include('gestor.urls')),
+    # login
+    path('usuarioAdd/', usuarioAdd,name='signin'),
+    path('usuarioLogin/', usuarioLogin, name='login'),
+    path('usuarioLogout/', usuarioLogout, name='logout'),
+    # gestor
+    path('gestor/', include('gestor.urls')),
 ]

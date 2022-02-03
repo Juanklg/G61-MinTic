@@ -56,7 +56,7 @@ ROOT_URLCONF = 'django61.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'C:\Users\MakeDream\Desktop\Ruta1\G61-MinTic\templates'],
+        'DIRS': [r'E:\escritorio\Ruta1\G61-MinTic\templates'],
         # 'DIRS': [r'C:\Users\Juan\Desktop\ruta1\G61-MinTic\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -123,9 +123,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    # BASE_DIR / "../static",
+    r'E:\escritorio\Ruta1\G61-MinTic\static'
     # r"C:\Users\Juan\Desktop\ruta1\G61-MinTic\static"
-    r"C:\Users\MakeDream\Desktop\Ruta1\G61-MinTic\static"
+    # r"C:\Users\MakeDream\Desktop\Ruta1\G61-MinTic\static"
 ]
 
 # Default primary key field type

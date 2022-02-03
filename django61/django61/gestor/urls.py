@@ -2,11 +2,10 @@ from django.urls import path
 from gestor.views import *
 
 urlpatterns = [
-    # rutas agregadas para creacion de articulos
-    path('', articulo),
-    path('add/', addArticulo)
-    # path('update/', addArticulo)
-    # path('delete/', addArticulo)
-]
-     
+    # Articulos
+    path('articulos/', articulos),
+    path('articuloAdd/', articuloAdd),
     
+    path('clientes/', clientes),
+    path('clienteAdd/', clientesAdd),
+]
